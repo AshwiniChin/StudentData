@@ -1,0 +1,16 @@
+﻿@model Student
+
+<h1>Edit Student</h1>
+
+<form method="post">
+
+    <div class="container">
+    <div class="border p-3">
+            <!-- <label>Student ID :</label><input asp-for="Id" class="form-control" style="width:300px">-->
+        <label>Student Name :</label><input asp-for="StudentName" class="form-control" style="width:300px" required>
+        <label>Student City :</label><input asp-for="City" class="form-control" style="width:300px" required>
+        <button type="submit" style="width:150px;margin-top:10px" class="btn btn-success">Update</button>
+        <a asp-controller="Student" asp-action="Index" class="btn btn-danger" style="width:150px;margin-top:10px">Bact to List</a>
+    </div>
+    </div>
+    </form>

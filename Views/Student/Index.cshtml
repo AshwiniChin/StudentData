@@ -1,0 +1,41 @@
+﻿
+@model IEnumerable<Student>
+@{
+    ViewData["Title"] = "Index";
+}
+<h1 style="text-align:center; background-color:aqua;margin-top:20px;box-shadow: 5px 5px 5px orange;border-radius:20px">Student Details</h1>
+<br />
+
+<div class="container">
+    <div style="float:right;margin-bottom:20px;">
+        <a asp-controller="Student" asp-action="Create" class="btn btn-warning">
+            Create New Student
+        </a> 
+    </div>
+</div>
+
+<table class="table table-bordered table-striped" style="width:100%">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Student Name</th>
+            <th>City</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.StudentName</td>
+                <td>@item.City</td>
+                <td>
+                    <a class="btn btn-info" asp-controller="Student" asp-action="Edit" asp-route-id="@item.Id">Update</a>
+
+                    <a class="btn btn-danger" asp-controller="Student" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
